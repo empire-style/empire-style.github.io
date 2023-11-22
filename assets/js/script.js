@@ -1,28 +1,28 @@
-'use strict';
+ &#39;use strict&#39;;
 
 // modal variables
-const modal = document.querySelector('[data-modal]');
-const modalCloseBtn = document.querySelector('[data-modal-close]');
-const modalCloseOverlay = document.querySelector('[data-modal-overlay]');
+const modal = document.querySelector(&#39;[data-modal]&#39;);
+const modalCloseBtn = document.querySelector(&#39;[data-modal-close]&#39;);
+const modalCloseOverlay = document.querySelector(&#39;[data-modal-overlay]&#39;);
 
 // modal function
-const modalCloseFunc = function () { modal.classList.add('closed') }
+const modalCloseFunc = function () { modal.classList.add(&#39;closed&#39;) }
 
 // modal eventListener
-modalCloseOverlay.addEventListener('click', modalCloseFunc);
-modalCloseBtn.addEventListener('click', modalCloseFunc);
+modalCloseOverlay.addEventListener(&#39;click&#39;, modalCloseFunc);
+modalCloseBtn.addEventListener(&#39;click&#39;, modalCloseFunc);
 
 
 
 
 
 // notification toast variables
-const notificationToast = document.querySelector('[data-toast]');
-const toastCloseBtn = document.querySelector('[data-toast-close]');
+const notificationToast = document.querySelector(&#39;[data-toast]&#39;);
+const toastCloseBtn = document.querySelector(&#39;[data-toast-close]&#39;);
 
 // notification toast eventListener
-toastCloseBtn.addEventListener('click', function () {
-  notificationToast.classList.add('closed');
+toastCloseBtn.addEventListener(&#39;click&#39;, function () {
+  notificationToast.classList.add(&#39;closed&#39;);
 });
 
 
@@ -30,26 +30,26 @@ toastCloseBtn.addEventListener('click', function () {
 
 
 // mobile menu variables
-const mobileMenuOpenBtn = document.querySelectorAll('[data-mobile-menu-open-btn]');
-const mobileMenu = document.querySelectorAll('[data-mobile-menu]');
-const mobileMenuCloseBtn = document.querySelectorAll('[data-mobile-menu-close-btn]');
-const overlay = document.querySelector('[data-overlay]');
+const mobileMenuOpenBtn = document.querySelectorAll(&#39;[data-mobile-menu-open-btn]&#39;);
+const mobileMenu = document.querySelectorAll(&#39;[data-mobile-menu]&#39;);
+const mobileMenuCloseBtn = document.querySelectorAll(&#39;[data-mobile-menu-close-btn]&#39;);
+const overlay = document.querySelector(&#39;[data-overlay]&#39;);
 
 for (let i = 0; i &lt; mobileMenuOpenBtn.length; i++) {
 
   // mobile menu function
   const mobileMenuCloseFunc = function () {
-    mobileMenu[i].classList.remove('active');
-    overlay.classList.remove('active');
+    mobileMenu[i].classList.remove(&#39;active&#39;);
+    overlay.classList.remove(&#39;active&#39;);
   }
 
-  mobileMenuOpenBtn[i].addEventListener('click', function () {
-    mobileMenu[i].classList.add('active');
-    overlay.classList.add('active');
+  mobileMenuOpenBtn[i].addEventListener(&#39;click&#39;, function () {
+    mobileMenu[i].classList.add(&#39;active&#39;);
+    overlay.classList.add(&#39;active&#39;);
   });
 
-  mobileMenuCloseBtn[i].addEventListener('click', mobileMenuCloseFunc);
-  overlay.addEventListener('click', mobileMenuCloseFunc);
+  mobileMenuCloseBtn[i].addEventListener(&#39;click&#39;, mobileMenuCloseFunc);
+  overlay.addEventListener(&#39;click&#39;, mobileMenuCloseFunc);
 
 }
 
@@ -58,30 +58,30 @@ for (let i = 0; i &lt; mobileMenuOpenBtn.length; i++) {
 
 
 // accordion variables
-const accordionBtn = document.querySelectorAll('[data-accordion-btn]');
-const accordion = document.querySelectorAll('[data-accordion]');
+const accordionBtn = document.querySelectorAll(&#39;[data-accordion-btn]&#39;);
+const accordion = document.querySelectorAll(&#39;[data-accordion]&#39;);
 
 for (let i = 0; i &lt; accordionBtn.length; i++) {
 
-  accordionBtn[i].addEventListener('click', function () {
+  accordionBtn[i].addEventListener(&#39;click&#39;, function () {
 
-    const clickedBtn = this.nextElementSibling.classList.contains('active');
+    const clickedBtn = this.nextElementSibling.classList.contains(&#39;active&#39;);
 
     for (let i = 0; i &lt; accordion.length; i++) {
 
       if (clickedBtn) break;
 
-      if (accordion[i].classList.contains('active')) {
+      if (accordion[i].classList.contains(&#39;active&#39;)) {
 
-        accordion[i].classList.remove('active');
-        accordionBtn[i].classList.remove('active');
+        accordion[i].classList.remove(&#39;active&#39;);
+        accordionBtn[i].classList.remove(&#39;active&#39;);
 
       }
 
     }
 
-    this.nextElementSibling.classList.toggle('active');
-    this.classList.toggle('active');
+    this.nextElementSibling.classList.toggle(&#39;active&#39;);
+    this.classList.toggle(&#39;active&#39;);
 
   });
 
